@@ -10,7 +10,9 @@ const cors = require('cors');
 
 app.use(cors());
 
-
+app.get('/',(req,res)=>{
+    res.send("Hell from server")
+})
 app.use(bodyParser.json())
 app.use('/tasks',TaskRouter )
 
