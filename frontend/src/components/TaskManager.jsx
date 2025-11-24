@@ -65,10 +65,11 @@ const TaskManager = () => {
             const {data} = await getAllTask()
             // console.log(data);
             setTasks(data)
-            console.log(data);
+            // console.log(data);
             
             setCopyTasks(data)
         } catch (error) {
+           
             console.error(error)
             notify('failed to get task','error')
 
