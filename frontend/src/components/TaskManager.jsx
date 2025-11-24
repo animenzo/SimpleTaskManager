@@ -18,10 +18,12 @@ const TaskManager = () => {
           _id: updateTask._id
         }
         updateItem(obj)
-        setInput("")
+        setInput("");
+    setUpdateTask(null);
       }else if(updateTask === null && input){
         // create task
         console.log("created api call");
+
         
         addTask()
       }
@@ -41,7 +43,7 @@ const TaskManager = () => {
         }
         try {
             const {success,message} = await createTask(obj)
-            // console.log(data);
+            console.log(obj);
             
             if(success){
                 notify(message,'success')
@@ -92,7 +94,7 @@ const TaskManager = () => {
             fetchAllTasks()
         } catch (error) {
             console.error(error)
-            notify('failed to get task','error')
+            notify('failed to delete task','error')
         }
     }
 
